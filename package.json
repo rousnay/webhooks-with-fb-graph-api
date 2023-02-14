@@ -1,7 +1,7 @@
 {
   "name": "fb-lead",
   "version": "0.1.0",
-  "description": "Graph API Webhooks Sample",
+  "description": "Implementation of Facebook Graph API Webhooks",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -18,13 +18,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
+    "url": "https://github.com/rousnay/webhooks-with-fb-graph-api"
   },
   "keywords": [
     "node",
     "express",
     "graph api"
   ],
-  "license": "https://github.com/",
-  "bugs": "https://github.com/"
+  "license": "https://github.com/rousnay/webhooks-with-fb-graph-api",
+  "bugs": "https://github.com/rousnay/webhooks-with-fb-graph-api/issues"
 }
