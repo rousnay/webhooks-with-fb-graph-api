@@ -1,5 +1,5 @@
 {
-  "name": "fb-lead",
+  "name": "webhooks-with-fb-graph-api",
   "version": "0.1.0",
   "description": "Implementation of Facebook Graph API Webhooks",
   "main": "index.js",
