@@ -1,0 +1,30 @@
+{
+  "name": "fb-lead",
+  "version": "0.1.0",
+  "description": "Graph API Webhooks Sample",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.20.1",
+    "express": "~4.18.2",
+    "express-x-hub": "^1.0.4",
+    "md5": "^2.3.0",
+    "sqlite3": "^5.1.4"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "graph api"
+  ],
+  "license": "https://github.com/",
+  "bugs": "https://github.com/"
+}
