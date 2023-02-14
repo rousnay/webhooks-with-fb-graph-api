@@ -1,26 +1,22 @@
-/**
- * Copyright 2016-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the license found in the
- * LICENSE file in the root directory of this source tree.
- */
+// To load an ES module, set "type": "module" in the package.json
+// import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+// dotenv.config();
+require("dotenv").config();
+const express = require("express");
+const xHub = require("express-x-hub");
+const bodyParser = require("body-parser");
 
-var bodyParser = require("body-parser");
-var express = require("express");
-var app = express();
-var xhub = require("express-x-hub");
-var PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
+const TOKEN = process.env.TOKEN;
+const SECRET = process.env.APP_SECRET;
 
+const app = express();
 app.set("port", PORT);
 app.listen(app.get("port"));
 
-app.use(
-  xhub({ algorithm: "sha1", secret: "7c895c7fa5a2a7bc789c527bd4c62c21" })
-);
+app.use(xHub({ algorithm: "sha1", secret: SECRET }));
 app.use(bodyParser.json());
 
-var token = process.env.TOKEN || "ca014UFXwe";
 var received_updates = [];
 
 app.get("/", function (req, res) {
@@ -31,7 +27,7 @@ app.get("/", function (req, res) {
 app.get(["/facebook", "/instagram"], function (req, res) {
   if (
     req.query["hub.mode"] == "subscribe" &&
-    req.query["hub.verify_token"] == token
+    req.query["hub.verify_token"] == TOKEN
   ) {
     res.send(req.query["hub.challenge"]);
   } else {
@@ -41,7 +37,6 @@ app.get(["/facebook", "/instagram"], function (req, res) {
 
 app.post("/facebook", function (req, res) {
   console.log("Facebook request body:", req.body);
-  console.log(PORT);
 
   if (!req.isXHubValid()) {
     console.log(
