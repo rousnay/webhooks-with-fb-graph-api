@@ -24,6 +24,13 @@ app.get("/", function (req, res) {
   res.send("<pre>" + JSON.stringify(received_updates, null, 2) + "</pre>");
 });
 
+var received_updates = ["hello World"];
+
+app.get("/test", function (req, res) {
+  console.log(req);
+  res.send("<pre>" + JSON.stringify(received_updates, null, 2) + "</pre>");
+});
+
 app.get(["/facebook", "/instagram"], function (req, res) {
   if (
     req.query["hub.mode"] == "subscribe" &&
