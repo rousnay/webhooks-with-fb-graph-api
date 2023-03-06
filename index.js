@@ -43,7 +43,7 @@ app.get(["/facebook", "/instagram"], function (req, res) {
 });
 
 app.post("/facebook", function (req, res) {
-  console.log("Facebook request body:", req.body.json());
+  console.log("Facebook request body:", req.body());
 
   if (!req.isXHubValid()) {
     console.log(
