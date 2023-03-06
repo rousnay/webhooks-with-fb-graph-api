@@ -24,7 +24,7 @@ app.get("/", function (req, res) {
   res.send("<pre>" + JSON.stringify(received_updates, null, 2) + "</pre>");
 });
 
-var received_updates = ["hello World"];
+var received_updates = [TOKEN, SECRET];
 
 app.get("/test", function (req, res) {
   console.log(req);
